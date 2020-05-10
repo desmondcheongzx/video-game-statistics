@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Video Games Statistics</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css"/>
+    <!--Feel free to add more CSS files as needed-->
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <img src="pacman2.png" style="display: none;" />
+      <img src="pacman1.png" style="display: none;" />
+      <h1 class="pacman"><img id="pacman-img" src="pacman1.png" width="30" style="vertical-align: bottom;">_Video Games Visualized_<div class="ghosts-box"><img class="marquee" src="ghosts.png" height="42" style="vertical-align: bottom;"></div></h1>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <h4>Top Games By Year
+              <div class="selector">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-info" onclick="showAllYears()">All years</button>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                      Specific Year <span class="caret"></span></button>
+                    <ul id="year-selector" class="dropdown-menu" role="menu">
+                    </ul>
+                  </div>                  
+                </div>
+              </div>
+            </h4>
+            <div class="card-body">
+              <div id="gamegraph"></div>
+            </div>
+          </div>
+          <div class="card">
+            <h4>Top Publishers For Each Genre
+              <div class="selector">
+                <div class="btn-group">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                      Select Metric <span class="caret"></span></button>
+                    <ul id="metric-selector" class="dropdown-menu" role="menu">
+                      <li><a onclick="setMetric('Sales');">Total Sales</a></li>
+                      <li><a onclick="setMetric('Average');">Average Sales</a></li>
+                    </ul>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                      Select Genre <span class="caret"></span></button>
+                    <ul id="genre-selector" class="dropdown-menu" role="menu">
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </h4>
+            <div class="card-body">
+              <div id="publishergraph"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <h4>Top Genres By Region</h4>
+            <div class="card-body">
+              <svg id="map" height="550"></svg>
+              <div id="mapgraph"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12" style="text-align: center;">
+          <small>
+            &copy; 2020 <a href="https://www.desmondcheong.com/">Desmond Cheong Zhi Xi</a> • Powered by <a class="strip-anchor" href="https://d3js.org/">D3</a>, based on a <a href="https://www.kaggle.com/gregorut/videogamesales">Kaggle dataset</a>
+          </small>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript">
+     let pacman = document.getElementById("pacman-img");
+     let cur_pacman = 0;
+     
+     function updatePacman() {
+       let images = ['pacman1.png', 'pacman2.png'];
+       cur_pacman += 1;
+       if (cur_pacman > 1) {
+         cur_pacman = 0;
+       }
+       pacman.src = images[cur_pacman];
+     }
+     
+     setInterval(updatePacman, 250);
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

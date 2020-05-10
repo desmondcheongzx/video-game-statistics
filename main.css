@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'Dots';
+    src: url('Codystar-Light.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+header {
+    background-color: #0b0d0f;
+    overflow: hidden;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+header > h1{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+    font-family: 'Dots', cursive;
+    font-size: 60px;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+h5 {
+    text-decoration: underline;
+}
+
+.container {
+    width: 100%;
+    margin-left: 0;
+}
+
+body {
+    transition: all 1s;
+    background-color: #efefef;
+}
+
+.selector {
+    display: inline-block;
+    float: right;
+    margin-top: -10px;
+}
+
+#year-selector, #genre-selector {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.btn-info {
+    color: #eee;
+    background-color: rgb(94, 74, 227);;
+    border-color: rgb(70, 50, 200);
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {
+    color: #eee;
+    background-color: rgb(70, 54, 173);;
+    border-color: rgb(29, 27, 113);
+}
+
+.tooltip {
+    position: absolute;			
+    text-align: center;			
+    width: 200px;					
+    height: 60px;					
+    font: 12px sans-serif;
+    padding-top: 8px;
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+
+/* Card styling */
+.card {
+    background-color: #fff;
+    padding: 1.5em;
+    border-radius: 5px;
+    margin-bottom: 1.5em;
+}
+
+.card-title {
+    border-style: solid;
+}
+
+.card-body {
+    border-top: 1px solid #777;
+}
+
+
+/* Map styles */
+
+#map {
+    width: 100%;
+}
+
+.translucent {
+    opacity: 0.3;
+}
+
+.land {
+    fill: #ccc;
+}
+
+.land-boundary {
+    fill: none;
+    stroke: #fff;
+}
+
+.land.selected {
+    fill: #000;
+    stroke: #000;
+}
+
+
+/* Fun pacman stuff */
+.pacman {
+    margin: auto;
+    max-width: 750px;
+    border: 10px double #2905d4;
+    overflow: hidden;
+}
+
+.marquee {
+    padding-right: 10px;
+    position: relative;
+    animation: marquee 3s linear infinite;
+}
+
+@keyframes marquee {
+    0% { right: 210px; }
+    100% { right: -250px; }
+}
+
+.ghosts-box {
+    width: 250px;
+    margin-right: -100px;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    overflow: hidden;
+    vertical-align: bottom;
+}
